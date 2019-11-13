@@ -1,0 +1,13 @@
+Zde je váš newsletter.
+
+Nejpopulárnější otázky:
+{% for question in questions %}
+    {{ question.title }} ({{ question.answerCount }} odpovědí, nejlepší od uživatel {{ question.bestAnswer }}
+
+{% endfor %}
+
+Články:
+{% for singleNews in news %}
+    {{ singleNews.title }} ({{ singleNews.pubDate|date('Y-m-d H:i:s')}}): {{ singleNews.link }}
+
+{% endfor %}

@@ -1,0 +1,16 @@
+<h2>Zde je váš newsletter.</h2>
+
+<h3>Nejpopulárnější otázky</h3>
+{% for question in questions %}
+    <p>{{ question.title }} ({{ question.answerCount }} odpovědí, nejlepší od uživatel {{ question.bestAnswer }})</p>
+{% endfor %}
+
+<h3>Články</h3>
+
+{% for article in articles %}
+    <p><a href="{{ article.link }}">{{ article.title }}</a> ({{article.pubDate|date('Y-m-d H:i:s')}})</p>
+{% endfor %}
+
+{% for singleNews in news %}
+    <p><a href="{{ singleNews.link }}">{{ singleNews.title }}</a> ({{ singleNews.pubDate|date('Y-m-d H:i:s') }})</p>
+{% endfor %}
